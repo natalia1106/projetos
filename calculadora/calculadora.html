@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>calculadora</title>
+    <script src="calculadoraop.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fundo {
+            background-color: #f9fdc9;
+            height: 100vh;
+            color: white;
+            font-family: Arial;
+        }
+
+        .calculadora {
+            position: absolute;
+            background-color: #0e0f01;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .botao {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            background-color: rgb(31, 31, 31);
+            border: none;
+            border-radius: 5px;
+            color: #f9fdc9;
+            margin: 3px;
+        }
+
+        .botaoC {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            background-color: #fe5f2f;
+            border: none;
+            border-radius: 5px;
+            color: #f9fdc9;
+            margin: 3px;
+        }
+
+        .botao:hover {
+            background-color: black;
+        }
+
+        .botaoC:hover {
+            background-color: #c33a11;
+        }
+
+        #resultado {
+            background-color: white;
+            width: 207px;
+            height: 30px;
+            margin: 5px;
+            font-size: 25px;
+            color: black;
+            text-align: right;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="calculadora">
+            <h1>calculadora</h1>
+            <p id="resultado"></p>
+            <table>
+                <tr>
+                    <td colspan="2"><button class="botaoC" style="width: 106px;" onclick="clean()">C</button></td>
+                    <td><button class="botao" onclick="back()"><-</button></td>
+                    <td><button class="botao" onclick="insert('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('7')">7</button></td>
+                    <td><button class="botao" onclick="insert('8')">8</button></td>
+                    <td><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="botao" onclick="insert('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('4')">4</button></td>
+                    <td><button class="botao" onclick="insert('5')">5</button></td>
+                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="botao" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('1')">1</button></td>
+                    <td><button class="botao" onclick="insert('2')">2</button></td>
+                    <td><button class="botao" onclick="insert('3')">3</button></td>
+                    <td><button class="botao" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
+                    <td><button class="botao" onclick="insert('.')">.</button></td>
+                    <td><button class="botao" onclick="calcular()">=</button></td>
+                </tr>
+                <!-- colspan é para expandir um botão na linha e rowspan é para expandir na coluna-->
+            </table>
+        </div>
+    </div>
+</body>
+</html>
