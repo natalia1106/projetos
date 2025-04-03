@@ -126,40 +126,34 @@
     </div>
 
     <script>
-        // Gerar CAPTCHA aleatório com caracteres difíceis de confundir
+        
         function generateCaptcha() {
-            // Removendo caracteres ambíguos como 0/O, 1/l/I, etc.
+        
             const chars = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz";
-            //Inicializa uma string vazia chamada captcha que armazenará o código gerado. 
+            
             let captcha = "";
             for (let i = 0; i < 6; i++) {
                 captcha += chars[Math.floor(Math.random() * chars.length)];
-                //Math.random(): Gera um número aleatório entre 0 e 1.
-                //chars.length: Retorna o tamanho da string chars (quantidade de caracteres disponíveis).
-                //Math.floor(): Arredonda para baixo, criando um índice válido (ex: entre 0 e 51 para chars.length = 52).
-                //chars[...]: Seleciona um caractere aleatório da string chars.
-                //captcha += ...: Concatena o caractere ao resultado final.
+                
             }
             return captcha;
         }
 
-        // Aplicar efeitos visuais ao CAPTCHA
+       
         function styleCaptcha() {
             const captchaElement = document.getElementById('captchaText');
-            //Obtém o elemento HTML onde o CAPTCHA é exibido (a <div> com id captchaText).
+            
             captchaElement.style.transform = `rotate(${Math.random() * 6 - 3}deg)`;
-            //Math.random() * 6 - 3: Gera um ângulo aleatório entre -3 e +3 graus.
-            //transform: rotate(): Inclina o texto levemente para dificultar leitura por bots.
-            captchaElement.style.textDecoration = Math.random() > 0.5 ? 'line-through' : 'none';
-            //risco
+ captchaElement.style.textDecoration = Math.random() > 0.5 ? 'line-through' : 'none';
+        
         }
 
-        // Inicializar CAPTCHA
+
         let currentCaptcha = generateCaptcha();
         document.getElementById('captchaText').textContent = currentCaptcha;
         styleCaptcha();
 
-        // Atualizar CAPTCHA
+        
         document.getElementById('refreshCaptcha').addEventListener('click', function () {
             currentCaptcha = generateCaptcha();
             document.getElementById('captchaText').textContent = currentCaptcha;
@@ -168,8 +162,7 @@
             styleCaptcha();
         });
 
-        // Verificar CAPTCHA
-        document.getElementById('submitCaptcha').addEventListener('click', function () {
+         document.getElementById('submitCaptcha').addEventListener('click', function () {
             const userInput = document.getElementById('captchaInput').value.trim();
             const messageElement = document.getElementById('captchaMessage');
 
@@ -196,8 +189,7 @@
             }
         });
 
-        // Permitir verificação ao pressionar Enter
-        document.getElementById('captchaInput').addEventListener('keypress', function (e) {
+         document.getElementById('captchaInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 document.getElementById('submitCaptcha').click();
             }
