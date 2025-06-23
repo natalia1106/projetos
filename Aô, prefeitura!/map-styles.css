@@ -1,0 +1,125 @@
+.map-instruction {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+.map-selecting {
+  cursor: crosshair !important;
+}
+
+/* Relatório de denúncias */
+.report-list-content {
+  max-width: 800px;
+}
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.report-list-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.report-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.report-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.report-list-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.report-list-date {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.report-list-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.report-list-urgency {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.report-list-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.no-reports {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Animação para o marcador de localização selecionada */
+.pulsing-icon {
+  position: relative;
+}
+
+.pulse {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(244, 67, 54, 0.7);
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(244, 67, 54, 0.4);
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(244, 67, 54, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+  }
+}

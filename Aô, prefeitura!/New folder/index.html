@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LimpaMGA</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="map-styles.css" />
+  <link rel="stylesheet" href="recycling-styles.css" />
+  <link rel="stylesheet" href="categories-styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Topbar -->
+    <div class="topbar">
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="logo">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>LimpaMGA</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="denunciar-btn" id="report-btn">
+          <i class="fas fa-plus"></i>
+          <span>SINALIZAR</span>
+        </button>
+        <div class="notification-btn" id="notification-btn">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </div>
+        <div class="profile-btn" id="profile-btn">
+          EU
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <button class="active" id="all-reports-btn">
+          <i class="fas fa-map-marker-alt"></i>
+          Todas as Sinalizações
+        </button>
+        <button id="pending-btn">
+          <i class="fas fa-exclamation-circle"></i>
+          Pendentes
+        </button>
+        <button id="analysis-btn">
+          <i class="fas fa-search"></i>
+          Em Análise
+        </button>
+        <button id="progress-btn">
+          <i class="fas fa-truck"></i>
+          Em Andamento
+        </button>
+        <button id="completed-btn">
+          <i class="fas fa-check-circle"></i>
+          Concluídas
+        </button>
+        <div style="flex: 1;"></div>
+        <button id="feedback-btn">
+          <i class="fas fa-comment-alt"></i>
+          Feedback
+        </button>
+        <button id="chat-btn">
+          <i class="fas fa-headset"></i>
+          Suporte
+        </button>
+        <button id="settings-btn">
+          <i class="fas fa-cog"></i>
+          Configurações
+        </button>
+      </div>
+
+      <!-- Mapa -->
+      <div class="map-container">
+        <div id="map"></div>
+        <div class="status-card">
+          <p><i class="fas fa-exclamation-circle" style="color: #ff9800;"></i> Em análise</p>
+          <p><i class="fas fa-truck" style="color: #2196f3;"></i> Em andamento</p>
+          <p><i class="fas fa-check-circle" style="color: #4caf50;"></i> Concluído</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-bottom-nav">
+      <a href="#" class="mobile-nav-item active">
+        <i class="fas fa-map-marked-alt"></i>
+        Mapa
+      </a>
+      <a href="#" class="mobile-nav-item" id="mobile-report-btn">
+        <i class="fas fa-plus-circle"></i>
+        Denunciar
+      </a>
+      <a href="#" class="mobile-nav-item">
+        <i class="fas fa-list"></i>
+        Denúncias
+      </a>
+      <a href="#" class="mobile-nav-item">
+        <i class="fas fa-user"></i>
+        Perfil
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal de Denúncia -->
+  <div class="modal" id="report-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-exclamation-triangle"></i> Nova Denúncia</h2>
+        <button class="close-btn" id="close-modal">&times;</button>
+      </div>
+      <form id="report-form">
+        <div class="form-group">
+          <label for="report-address"><i class="fas fa-home"></i> Endereço</label>
+          <input type="text" id="report-address" placeholder="Digite o endereço completo do local" required>
+          <small id="address-help" style="color: #666;">Rua, número, bairro, CEP</small>
+        </div>
+        <div class="form-group">
+          <label for="report-description"><i class="fas fa-align-left"></i> Descrição</label>
+          <textarea id="report-description" placeholder="Descreva o problema em detalhes..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="report-photo"><i class="fas fa-camera"></i> Foto (opcional)</label>
+          <input type="file" id="report-photo" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="report-urgency"><i class="fas fa-exclamation"></i> Urgência</label>
+          <select id="report-urgency" required>
+            <option value="baixa">Baixa</option>
+            <option value="media" selected>Média</option>
+            <option value="alta">Alta</option>
+            <option value="emergencia">Emergência</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="report-contact"><i class="fas fa-phone"></i> Contato (opcional)</label>
+          <input type="text" id="report-contact" placeholder="Seu telefone ou e-mail para atualizações">
+        </div>
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> ENVIAR DENÚNCIA
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Detalhes da Denúncia -->
+  <div class="modal" id="details-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-info-circle"></i> Detalhes da Denúncia</h2>
+        <button class="close-btn" id="close-details-modal">&times;</button>
+      </div>
+      <div id="report-details-content">
+        <!-- Conteúdo preenchido dinamicamente -->
+      </div>
+      <div class="modal-footer">
+        <button class="popup-btn popup-btn-primary" id="update-status-btn">
+          <i class="fas fa-sync-alt"></i> Atualizar Status
+        </button>
+        <button class="popup-btn popup-btn-secondary" id="share-report-btn">
+          <i class="fas fa-share-alt"></i> Compartilhar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Notificações -->
+  <div class="modal" id="notifications-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-bell"></i> Notificações</h2>
+        <button class="close-btn" id="close-notifications-modal">&times;</button>
+      </div>
+      <div class="notifications-list">
+        <div class="notification-item unread">
+          <div class="notification-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="notification-content">
+            <div class="notification-title">Denúncia Atualizada</div>
+            <div class="notification-text">Sua denúncia sobre "Lixo no Terreno Baldio" foi marcada como concluída.</div>
+            <div class="notification-time">Há 2 horas</div>
+          </div>
+        </div>
+        <div class="notification-item unread">
+          <div class="notification-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div class="notification-content">
+            <div class="notification-title">Denúncia em Andamento</div>
+            <div class="notification-text">Sua denúncia sobre "Acúmulo de Lixo na esquina" está em andamento.</div>
+            <div class="notification-time">Há 1 dia</div>
+          </div>
+        </div>
+        <div class="notification-item">
+          <div class="notification-icon">
+            <i class="fas fa-comment-alt"></i>
+          </div>
+          <div class="notification-content">
+            <div class="notification-title">Novo Comentário</div>
+            <div class="notification-text">Um agente público comentou em sua denúncia.</div>
+            <div class="notification-time">Há 3 dias</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="popup-btn popup-btn-secondary" id="mark-all-read-btn">
+          <i class="fas fa-check-double"></i> Marcar todas como lidas
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Relatório de Denúncias -->
+  <div class="modal" id="report-list-modal">
+    <div class="modal-content report-list-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-list"></i> <span id="report-list-title">Relatório de Denúncias</span></h2>
+        <button class="close-btn" id="close-report-list-modal">&times;</button>
+      </div>
+      <div id="report-list-container">
+        <!-- Conteúdo preenchido dinamicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="recycling-points.js"></script>
+  <script src="categories.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

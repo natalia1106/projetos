@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Aô, Prefeitura</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login-styles.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-logo">
+          <i class="fas fa-map-marked-alt"></i>
+          <h1>Aô, Prefeitura</h1>
+        </div>
+        <p class="login-subtitle">Faça login para acessar a plataforma</p>
+      </div>
+
+      <div class="login-tabs">
+        <button class="login-tab-btn active" id="login-tab">Login</button>
+        <button class="login-tab-btn" id="register-tab">Cadastro</button>
+      </div>
+
+      <!-- Formulário de Login -->
+      <div class="login-form-container" id="login-form">
+        <form id="login-form-element">
+          <div class="form-group">
+            <label for="login-cpf"><i class="fas fa-id-card"></i> CPF</label>
+            <input type="text" id="login-cpf" placeholder="Digite seu CPF" required maxlength="14">
+            <small class="form-help">Digite apenas números ou com pontuação</small>
+          </div>
+          <div class="form-group">
+            <label for="login-password"><i class="fas fa-lock"></i> Senha</label>
+            <div class="password-input-container">
+              <input type="password" id="login-password" placeholder="Digite sua senha" required>
+              <button type="button" class="toggle-password" tabindex="-1">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-group remember-me">
+            <label class="checkbox-container">
+              <input type="checkbox" id="remember-me">
+              <span class="checkmark"></span>
+              Lembrar meus dados
+            </label>
+            <a href="#" class="forgot-password">Esqueci minha senha</a>
+          </div>
+          <button type="submit" class="login-btn">
+            <i class="fas fa-sign-in-alt"></i> Entrar
+          </button>
+        </form>
+      </div>
+
+      <!-- Formulário de Cadastro -->
+      <div class="login-form-container" id="register-form" style="display: none;">
+        <form id="register-form-element">
+          <div class="form-group">
+            <label for="register-name"><i class="fas fa-user"></i> Nome Completo</label>
+            <input type="text" id="register-name" placeholder="Digite seu nome completo" required>
+          </div>
+          <div class="form-group">
+            <label for="register-cpf"><i class="fas fa-id-card"></i> CPF</label>
+            <input type="text" id="register-cpf" placeholder="Digite seu CPF" required maxlength="14">
+            <small class="form-help">Digite apenas números ou com pontuação</small>
+          </div>
+          <div class="form-group">
+            <label for="register-email"><i class="fas fa-envelope"></i> E-mail</label>
+            <input type="email" id="register-email" placeholder="Digite seu e-mail" required>
+          </div>
+          <div class="form-group">
+            <label for="register-password"><i class="fas fa-lock"></i> Senha</label>
+            <div class="password-input-container">
+              <input type="password" id="register-password" placeholder="Crie uma senha" required>
+              <button type="button" class="toggle-password" tabindex="-1">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <small class="form-help">Mínimo de 8 caracteres, incluindo letras e números</small>
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password"><i class="fas fa-lock"></i> Confirmar Senha</label>
+            <div class="password-input-container">
+              <input type="password" id="register-confirm-password" placeholder="Confirme sua senha" required>
+              <button type="button" class="toggle-password" tabindex="-1">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-group terms-container">
+            <label class="checkbox-container">
+              <input type="checkbox" id="accept-terms" required>
+              <span class="checkmark"></span>
+              Concordo com os <a href="#" class="terms-link">Termos de Uso</a> e <a href="#" class="terms-link">Política de Privacidade</a>
+            </label>
+          </div>
+          <button type="submit" class="login-btn register-btn">
+            <i class="fas fa-user-plus"></i> Cadastrar
+          </button>
+        </form>
+      </div>
+
+      <div class="login-footer">
+        <p>Ou continue com</p>
+        <div class="social-login">
+          <button class="social-btn google-btn">
+            <i class="fab fa-google"></i>
+          </button>
+          <button class="social-btn facebook-btn">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button class="social-btn gov-btn">
+            <i class="fas fa-id-card"></i> Gov.br
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
