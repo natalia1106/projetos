@@ -15,6 +15,6 @@ Sistema de login simples em linguagem C, aplicando conceitos de manipulação de
 - **DO NOT MAKE A MISTAKE**
 Um game criado por mim e meus amigos destinado a matéria de Front-end utilizando HTML, CSS, Javascript. - Desenvolvido através do Phaser
 Acesse DO NOT MAKE A MISTAKE através do site: https://2xandrade.github.io/Do-Not-Make-A-Mistake/
-
+  cesse o repositório através deste link: https://github.com/2xandrade/Do-Not-Make-A-Mistake 
 ## Objetivo
 Este repositório tem como objetivo demonstrar projetos realizados durante a faculdade e também projetos pessoais desenvolvidos para prática e aprofundamento de conhecimentos.
