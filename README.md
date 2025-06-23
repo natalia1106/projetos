@@ -13,6 +13,7 @@ Projeto de geração de Captcha simples utilizando HTML, CSS, Javascript e lógi
 Sistema de login simples em linguagem C, aplicando conceitos de manipulação de arquivos, criptografia e lógica de autenticação.
 
 - **DO NOT MAKE A MISTAKE**
+
 Um game criado por mim e meus amigos destinado a matéria de Front-end utilizando HTML, CSS, Javascript. - Desenvolvido através do Phaser
 
 Acesse DO NOT MAKE A MISTAKE através do site: https://2xandrade.github.io/Do-Not-Make-A-Mistake/
