@@ -1,4 +1,4 @@
-# Alguns projetos | Natália Possani de LimaAdd commentMore actions
+# Alguns projetos | Natália Possani de Lima
 Aqui estão armazenados alguns dos projetos que desenvolvi ao longo da minha jornada acadêmica, estudos pessoais e prática na área de desenvolvimento de software. Este espaço serve como meu portfólio, onde você pode acompanhar meu progresso, meus aprendizados e minha evolução na área de tecnologia.
 
 ## Projetos Disponíveis
