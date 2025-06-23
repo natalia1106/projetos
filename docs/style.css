@@ -1,0 +1,15 @@
+/* remove margin and padding from all elements */
+* {
+    padding : 0;
+    margin : 0;
+}
+
+/* set body background color */
+body {
+    background-color : #000000;    
+}
+
+/* Disable browser handling of all panning and zooming gestures. */
+canvas {
+    touch-action : none;
+}

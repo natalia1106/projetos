@@ -1,20 +1,61 @@
-# Alguns projetos | Natália Possani de Lima
-Aqui estão armazenados alguns dos projetos que desenvolvi ao longo da minha jornada acadêmica, estudos pessoais e prática na área de desenvolvimento de software. Este espaço serve como meu portfólio, onde você pode acompanhar meu progresso, meus aprendizados e minha evolução na área de tecnologia.
+# DO NOT MAKE A MISTAKE
 
-## Projetos Disponíveis
+---
 
-- **Calculadora**  
-Pequeno projeto de calculadora desenvolvido para prática de lógica de programação e desenvolvimento web utilizando HTML, CSS, Javascript.
+### Resumo do Enredo
 
-- **Captcha**  
-Projeto de geração de Captcha simples utilizando HTML, CSS, Javascript e lógica de validação.  
+Você alguma vez já se perguntou como é estar entre a vida e a morte? Lutar por sua vida enquanto o mundo ao seu redor pode — ou não — desaparecer, questionando-se a todo momento como estão as pessoas de quem você se importa ou como gostaria de se desculpar... ou apenas olhar mais uma vez para aquele a quem deseja proteger. Neste jogo, você irá reencarnar em um coliseu, onde sua classe dirá muito sobre o seu personagem. Conforme suas escolhas, será possível entender um pouco mais sobre o coração de seu herói. Mas cuidado para não se corromper: você não está realmente vivo, nem morto. Sua alma está sendo julgada a cada passo. Além de precisar sobreviver às hordas de culpa e arrependimentos, você deverá escolher sabiamente suas ações — um passo em falso pode trazer grandes consequências.
+Nesta aventura, o jogador poderá escolher entre quatro personagens com questões pendentes: um paladino à procura de sua irmã, um bardo de coração partido, uma ladina que roubou algo que não devia e uma arqueira que, há muito tempo, não acerta um alvo.
 
-- **Login em C**  
-Sistema de login simples em linguagem C, aplicando conceitos de manipulação de arquivos, criptografia e lógica de autenticação.
+---
 
-- **DO NOT MAKE A MISTAKE**
-Um game criado por mim e meus amigos destinado a matéria de Front-end utilizando HTML, CSS, Javascript. - Desenvolvido através do Phaser
-Acesse DO NOT MAKE A MISTAKE através do site: https://2xandrade.github.io/Do-Not-Make-A-Mistake/ 
+### Objetivo do Jogador
 
-## Objetivo
-Este repositório tem como objetivo demonstrar projetos realizados durante a faculdade e também projetos pessoais desenvolvidos para prática e aprofundamento de conhecimentos.
+Sobreviver o maior tempo possível dentro do coliseu entre a vida e a morte, enfrentando hordas crescentes de inimigos enquanto evolui seu personagem, descobre eventos únicos e busca compreender o destino de sua alma.
+Cada escolha influencia o julgamento final de sua existência, e apenas os mais fortes — e mais sábios — alcançarão a redenção... ou cairão na corrupção eterna
+
+---
+
+### Site para jogar
+
+Você pode acessar o jogo através do site: https://2xandrade.github.io/Do-Not-Make-A-Mistake/
+
+---
+
+### Controles Básicos
+
+* **Seleção de Personagem**: Antes de iniciar o jogo, o jogador poderá escolher entre os quatro personagens disponíveis: Ladina, Arqueira, Paladino e Bardo.
+* **Movimentação**: Durante a partida, utilize as teclas:
+  * **W** – Cima
+  * **A** – Esquerda
+  * **S** – Baixo
+  * **D** – Direita
+
+* **Combate e Coleta** : Elimine os inimigos e colete os cookies deixados por eles.
+* **Cookies** : Item derrubado pelos inimigos que aumenta sua experiência (XP), permitindo atingir novos níveis e desbloquear power-ups.
+* **Power-ups** : Ao subir de nível, você poderá escolher entre três melhorias que facilitarão o combate. Tipos disponíveis:
+  * **+1 HP**
+  * **+5 XP**
+  * **+1 Tiro**
+  * **Área de coleta aumentada**
+  * **Tiro veloz**
+  * **Mais velocidade**
+
+* **Eventos**: NPCs especiais aparecerão durante a partida. Ao interagir com eles, você poderá receber power-ups extras que ajudarão na preparação para o confronto com o chefe final.
+
+---
+
+### Regras Básicas
+
+* **Escolha de Herói:** Quatro personagens jogáveis (Paladino, Bardo, Ladina, Arqueira), cada um com questões pendentes e motivações únicas.
+* **Combate Roguelike:** Hordas de inimigos que ficam progressivamente mais fortes.
+* **Eventos Dinâmicos:** Encontros com eventos únicos e chefes a cada 3 minutos, culminando em um chefe final aos 12 minutos.
+* **Progressão de Personagem:** Ganho de EXP e escolha de novas melhorias de habilidades.
+
+---
+
+### Stack Tecnológica
+Tecnologias, frameworks e bibliotecas utilizadas no desenvolvimento do projeto:
+*   **Phaser e Javascript:** Responsável pela implementação das mecânicas e funcionalidades principais do jogo.
+*   **Bibliotecas:** Phaser
+*   **HTML e CSS:** Estruturação e estilização da interface
