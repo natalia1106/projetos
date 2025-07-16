@@ -1,7 +1,7 @@
 # 💻Alguns projetos | Natália Possani de Lima
 Aqui estão armazenados alguns dos projetos que desenvolvi ao longo da minha jornada acadêmica, estudos pessoais e prática na área de desenvolvimento de software. Este espaço serve como meu portfólio, onde você pode acompanhar meu progresso, meus aprendizados e minha evolução na área de tecnologia.
 
-✏[Repositorio de estudos](https://github.com/natalia1106/Estudo/tree/main) - Espaço onde organizo meus materiais de estudo, anotações, exercícios práticos e projetos desenvolvidos ao longo da minha jornada de aprendizado.
+✏[Repositorio de estudos](https://github.com/natalia1106/Estudo/tree/main) - Espaço onde organizo meus materiais de estudo, cursos feitos, anotações, exercícios práticos e projetos desenvolvidos ao longo da minha jornada de aprendizado.
 ## Projetos Disponíveis
 
 - **Calculadora🧮**  
